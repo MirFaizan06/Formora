@@ -32,7 +32,12 @@ const FIELD_PREVIEWS: Record<string, React.ReactNode> = {
   date:     <input type="date" className="canvas-field__preview-input" readOnly />,
   time:     <input type="time" className="canvas-field__preview-input" readOnly />,
   checkbox: <label className="canvas-field__preview-check"><input type="checkbox" disabled /> Option</label>,
-  dropdown: <select className="canvas-field__preview-input" disabled><option>Select option…</option></select>,
+  dropdown: (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
+      <select className="canvas-field__preview-input" disabled><option>Select option…</option></select>
+      <span className="canvas-field__print-hint">⚠ Printed as radio circles — dropdowns can't be used on paper</span>
+    </div>
+  ),
   signature:<div className="canvas-field__preview-sig">✏ Sign here</div>,
 }
 
@@ -82,6 +87,9 @@ export default function CanvasField({
         isDragOver ? 'canvas-field--drag-over' : '',
       ].filter(Boolean).join(' ')}
       style={{ gridColumn: `span ${colSpan}` }}
+      data-field-id={field.id}
+      data-form-id={formId}
+      data-page-id={pageId}
       onClick={() => setSelectedField(field.id)}
       draggable
       onDragStart={(e) => { e.dataTransfer.effectAllowed = 'move'; onDragStart(index) }}

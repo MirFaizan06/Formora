@@ -21,7 +21,6 @@ export default function Splash({ onDone }: SplashProps) {
 
   function handleGetStarted() {
     if (timerRef.current) clearTimeout(timerRef.current)
-    localStorage.setItem('formora:splash-v2', '1')
     onDone()
   }
 

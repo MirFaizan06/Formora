@@ -733,6 +733,624 @@ export const TEMPLATES: FormTemplate[] = [
       },
     ],
   },
+
+  // ─────────────────────────────────────────────
+  // 9. Invoice
+  // ─────────────────────────────────────────────
+  {
+    id: 'tmpl-009',
+    name: 'Service Invoice',
+    description: 'A clean, professional invoice form for freelancers and small businesses to bill clients for services.',
+    category: 'business',
+    fieldCount: 10,
+    settings: { paperSize: 'A4', orientation: 'portrait', showPageNumbers: false, primaryColor: '#4F46E5' },
+    pages: [
+      {
+        title: 'Invoice',
+        order: 0,
+        fields: [
+          {
+            id: 'f-9-1', type: 'form-header', label: 'Invoice', metadata: 'Please remit payment within 30 days of invoice date.',
+            required: false, width: 'full', order: 0,
+          },
+          {
+            id: 'f-9-2', type: 'text', label: 'Invoice Number', placeholder: 'INV-001',
+            required: true, width: 'half', order: 1,
+          },
+          {
+            id: 'f-9-3', type: 'date', label: 'Invoice Date',
+            required: true, width: 'half', order: 2,
+          },
+          {
+            id: 'f-9-4', type: 'text', label: 'Bill To (Client Name)', placeholder: 'Client or company name',
+            required: true, width: 'half', order: 3,
+          },
+          {
+            id: 'f-9-5', type: 'email', label: 'Client Email', placeholder: 'client@example.com',
+            required: false, width: 'half', order: 4,
+          },
+          {
+            id: 'f-9-6', type: 'address', label: 'Client Billing Address',
+            required: false, width: 'full', order: 5,
+          },
+          {
+            id: 'f-9-7', type: 'divider', label: '', required: false, width: 'full', order: 6,
+          },
+          {
+            id: 'f-9-8', type: 'table', label: 'Services / Line Items',
+            required: false, width: 'full', order: 7,
+            tableColumns: ['Description', 'Qty', 'Rate', 'Amount'],
+            tableRows: 6,
+          },
+          {
+            id: 'f-9-9', type: 'textarea', label: 'Notes / Payment Instructions', placeholder: 'Bank details, payment terms, or any additional notes…',
+            required: false, width: 'full', order: 8,
+          },
+          {
+            id: 'f-9-10', type: 'signature', label: 'Authorized Signature',
+            required: false, width: 'half', order: 9,
+          },
+        ],
+      },
+    ],
+  },
+
+  // ─────────────────────────────────────────────
+  // 10. Non-Disclosure Agreement
+  // ─────────────────────────────────────────────
+  {
+    id: 'tmpl-010',
+    name: 'Non-Disclosure Agreement',
+    description: 'A mutual NDA form for protecting confidential information between two parties.',
+    category: 'legal',
+    fieldCount: 12,
+    settings: { paperSize: 'A4', orientation: 'portrait', showPageNumbers: true, primaryColor: '#1E293B' },
+    pages: [
+      {
+        title: 'Non-Disclosure Agreement',
+        order: 0,
+        fields: [
+          {
+            id: 'f-10-1', type: 'form-header', label: 'Mutual Non-Disclosure Agreement',
+            metadata: 'This NDA is entered into between the parties named below.',
+            required: false, width: 'full', order: 0,
+          },
+          {
+            id: 'f-10-2', type: 'text', label: 'Disclosing Party (Company / Individual)', placeholder: 'Full legal name',
+            required: true, width: 'half', order: 1,
+          },
+          {
+            id: 'f-10-3', type: 'text', label: 'Receiving Party (Company / Individual)', placeholder: 'Full legal name',
+            required: true, width: 'half', order: 2,
+          },
+          {
+            id: 'f-10-4', type: 'date', label: 'Effective Date',
+            required: true, width: 'half', order: 3,
+          },
+          {
+            id: 'f-10-5', type: 'text', label: 'Agreement Duration', placeholder: 'e.g. 2 years from effective date',
+            required: false, width: 'half', order: 4,
+          },
+          {
+            id: 'f-10-6', type: 'textarea', label: 'Purpose of Disclosure', placeholder: 'Describe the business purpose for sharing confidential information…',
+            required: true, width: 'full', order: 5,
+          },
+          {
+            id: 'f-10-7', type: 'textarea', label: 'Definition of Confidential Information', placeholder: 'Describe what constitutes confidential information under this agreement…',
+            required: false, width: 'full', order: 6,
+          },
+          {
+            id: 'f-10-8', type: 'divider', label: '', required: false, width: 'full', order: 7,
+          },
+          {
+            id: 'f-10-9', type: 'label', label: 'By signing below, both parties agree to the terms and conditions of this Non-Disclosure Agreement.',
+            required: false, width: 'full', order: 8,
+          },
+          {
+            id: 'f-10-10', type: 'signature', label: 'Disclosing Party Signature',
+            required: true, width: 'half', order: 9,
+          },
+          {
+            id: 'f-10-11', type: 'signature', label: 'Receiving Party Signature',
+            required: true, width: 'half', order: 10,
+          },
+          {
+            id: 'f-10-12', type: 'date', label: 'Date Signed',
+            required: true, width: 'half', order: 11,
+          },
+        ],
+      },
+    ],
+  },
+
+  // ─────────────────────────────────────────────
+  // 11. Property Inspection Report
+  // ─────────────────────────────────────────────
+  {
+    id: 'tmpl-011',
+    name: 'Property Inspection Report',
+    description: 'A detailed checklist-style form for real estate or rental property inspections.',
+    category: 'real-estate',
+    fieldCount: 14,
+    settings: { paperSize: 'A4', orientation: 'portrait', showPageNumbers: true, primaryColor: '#0369A1' },
+    pages: [
+      {
+        title: 'Property Inspection',
+        order: 0,
+        fields: [
+          {
+            id: 'f-11-1', type: 'form-header', label: 'Property Inspection Report',
+            metadata: 'Complete this form during or immediately after the property inspection.',
+            required: false, width: 'full', order: 0,
+          },
+          {
+            id: 'f-11-2', type: 'text', label: 'Property Address', placeholder: '123 Main St, City, State',
+            required: true, width: 'full', order: 1,
+          },
+          {
+            id: 'f-11-3', type: 'date', label: 'Inspection Date',
+            required: true, width: 'half', order: 2,
+          },
+          {
+            id: 'f-11-4', type: 'text', label: 'Inspector Name', placeholder: 'Full name',
+            required: true, width: 'half', order: 3,
+          },
+          {
+            id: 'f-11-5', type: 'divider', label: '', required: false, width: 'full', order: 4,
+          },
+          {
+            id: 'f-11-6', type: 'form-header', label: 'Condition Checklist', metadata: 'Rate each area.',
+            required: false, width: 'full', order: 5,
+          },
+          {
+            id: 'f-11-7', type: 'radio', label: 'Exterior Condition',
+            options: [
+              { label: 'Excellent', value: 'excellent' },
+              { label: 'Good', value: 'good' },
+              { label: 'Fair', value: 'fair' },
+              { label: 'Poor', value: 'poor' },
+            ],
+            required: true, width: 'half', order: 6,
+          },
+          {
+            id: 'f-11-8', type: 'radio', label: 'Interior Condition',
+            options: [
+              { label: 'Excellent', value: 'excellent' },
+              { label: 'Good', value: 'good' },
+              { label: 'Fair', value: 'fair' },
+              { label: 'Poor', value: 'poor' },
+            ],
+            required: true, width: 'half', order: 7,
+          },
+          {
+            id: 'f-11-9', type: 'radio', label: 'Plumbing',
+            options: [
+              { label: 'Functional', value: 'functional' },
+              { label: 'Minor Issues', value: 'minor' },
+              { label: 'Needs Repair', value: 'repair' },
+            ],
+            required: false, width: 'half', order: 8,
+          },
+          {
+            id: 'f-11-10', type: 'radio', label: 'Electrical',
+            options: [
+              { label: 'Functional', value: 'functional' },
+              { label: 'Minor Issues', value: 'minor' },
+              { label: 'Needs Repair', value: 'repair' },
+            ],
+            required: false, width: 'half', order: 9,
+          },
+          {
+            id: 'f-11-11', type: 'checkbox-group', label: 'Defects Found',
+            options: [
+              { label: 'Roof Damage', value: 'roof' },
+              { label: 'Foundation Cracks', value: 'foundation' },
+              { label: 'Water Damage / Mould', value: 'water' },
+              { label: 'Pest Infestation', value: 'pest' },
+              { label: 'HVAC Issues', value: 'hvac' },
+              { label: 'None', value: 'none' },
+            ],
+            required: false, width: 'full', order: 10,
+          },
+          {
+            id: 'f-11-12', type: 'textarea', label: 'Additional Notes', placeholder: 'Describe any other observations or concerns…',
+            required: false, width: 'full', order: 11,
+          },
+          {
+            id: 'f-11-13', type: 'signature', label: 'Inspector Signature',
+            required: true, width: 'half', order: 12,
+          },
+          {
+            id: 'f-11-14', type: 'date', label: 'Report Date',
+            required: true, width: 'half', order: 13,
+          },
+        ],
+      },
+    ],
+  },
+
+  // ─────────────────────────────────────────────
+  // 12. Travel Expense Report
+  // ─────────────────────────────────────────────
+  {
+    id: 'tmpl-012',
+    name: 'Travel Expense Report',
+    description: 'Submit and document business travel expenses with receipts breakdown and manager approval.',
+    category: 'business',
+    fieldCount: 10,
+    settings: { paperSize: 'A4', orientation: 'portrait', showPageNumbers: false, primaryColor: '#059669' },
+    pages: [
+      {
+        title: 'Travel Expense Report',
+        order: 0,
+        fields: [
+          {
+            id: 'f-12-1', type: 'form-header', label: 'Travel Expense Report',
+            metadata: 'Submit within 14 days of trip completion. Attach all receipts.',
+            required: false, width: 'full', order: 0,
+          },
+          {
+            id: 'f-12-2', type: 'text', label: 'Employee Name', placeholder: 'Full name',
+            required: true, width: 'half', order: 1,
+          },
+          {
+            id: 'f-12-3', type: 'text', label: 'Department', placeholder: 'Your department',
+            required: false, width: 'half', order: 2,
+          },
+          {
+            id: 'f-12-4', type: 'text', label: 'Purpose of Travel', placeholder: 'e.g. Client meeting, Conference',
+            required: true, width: 'full', order: 3,
+          },
+          {
+            id: 'f-12-5', type: 'date', label: 'Travel Start Date',
+            required: true, width: 'half', order: 4,
+          },
+          {
+            id: 'f-12-6', type: 'date', label: 'Travel End Date',
+            required: true, width: 'half', order: 5,
+          },
+          {
+            id: 'f-12-7', type: 'table', label: 'Expense Breakdown',
+            required: false, width: 'full', order: 6,
+            tableColumns: ['Date', 'Category', 'Description', 'Amount'],
+            tableRows: 8,
+          },
+          {
+            id: 'f-12-8', type: 'textarea', label: 'Additional Notes', placeholder: 'Any exceptional expenses or explanations…',
+            required: false, width: 'full', order: 7,
+          },
+          {
+            id: 'f-12-9', type: 'signature', label: 'Employee Signature',
+            required: true, width: 'half', order: 8,
+          },
+          {
+            id: 'f-12-10', type: 'signature', label: 'Manager Approval',
+            required: false, width: 'half', order: 9,
+          },
+        ],
+      },
+    ],
+  },
+
+  // ─────────────────────────────────────────────
+  // 13. Volunteer Registration
+  // ─────────────────────────────────────────────
+  {
+    id: 'tmpl-013',
+    name: 'Volunteer Registration',
+    description: 'A registration form for volunteers at nonprofits, community events, or charitable organizations.',
+    category: 'nonprofit',
+    fieldCount: 12,
+    settings: { paperSize: 'A4', orientation: 'portrait', showPageNumbers: false, primaryColor: '#D97706' },
+    pages: [
+      {
+        title: 'Volunteer Registration',
+        order: 0,
+        fields: [
+          {
+            id: 'f-13-1', type: 'form-header', label: 'Volunteer Registration',
+            metadata: 'Thank you for your interest in volunteering with us!',
+            required: false, width: 'full', order: 0,
+          },
+          {
+            id: 'f-13-2', type: 'text', label: 'Full Name', placeholder: 'Your full name',
+            required: true, width: 'half', order: 1,
+          },
+          {
+            id: 'f-13-3', type: 'email', label: 'Email Address', placeholder: 'you@example.com',
+            required: true, width: 'half', order: 2,
+          },
+          {
+            id: 'f-13-4', type: 'phone', label: 'Phone Number', placeholder: '+1 (555) 000-0000',
+            required: false, width: 'half', order: 3,
+          },
+          {
+            id: 'f-13-5', type: 'date', label: 'Date of Birth',
+            required: false, width: 'half', order: 4,
+          },
+          {
+            id: 'f-13-6', type: 'checkbox-group', label: 'Areas of Interest',
+            options: [
+              { label: 'Event Setup & Logistics', value: 'events' },
+              { label: 'Food & Kitchen', value: 'food' },
+              { label: 'Tutoring / Mentoring', value: 'tutoring' },
+              { label: 'Fundraising', value: 'fundraising' },
+              { label: 'Administration', value: 'admin' },
+              { label: 'Social Media & Marketing', value: 'social' },
+            ],
+            required: false, width: 'full', order: 5,
+          },
+          {
+            id: 'f-13-7', type: 'radio', label: 'Availability',
+            options: [
+              { label: 'Weekdays only', value: 'weekdays' },
+              { label: 'Weekends only', value: 'weekends' },
+              { label: 'Both weekdays and weekends', value: 'both' },
+              { label: 'Flexible', value: 'flexible' },
+            ],
+            required: false, width: 'half', order: 6,
+          },
+          {
+            id: 'f-13-8', type: 'radio', label: 'Hours Per Week Available',
+            options: [
+              { label: '1–5 hours', value: '1_5' },
+              { label: '5–10 hours', value: '5_10' },
+              { label: '10+ hours', value: '10_plus' },
+            ],
+            required: false, width: 'half', order: 7,
+          },
+          {
+            id: 'f-13-9', type: 'textarea', label: 'Skills / Experience', placeholder: 'Describe any relevant skills, experience, or languages spoken…',
+            required: false, width: 'full', order: 8,
+          },
+          {
+            id: 'f-13-10', type: 'text', label: 'Emergency Contact Name', placeholder: 'Full name',
+            required: false, width: 'half', order: 9,
+          },
+          {
+            id: 'f-13-11', type: 'phone', label: 'Emergency Contact Phone', placeholder: '+1 (555) 000-0000',
+            required: false, width: 'half', order: 10,
+          },
+          {
+            id: 'f-13-12', type: 'checkbox', label: 'I agree to the volunteer terms, code of conduct, and consent to a background check if required.',
+            required: true, width: 'full', order: 11,
+          },
+        ],
+      },
+    ],
+  },
+
+  // ─────────────────────────────────────────────
+  // 14. Incident Report
+  // ─────────────────────────────────────────────
+  {
+    id: 'tmpl-014',
+    name: 'Incident Report',
+    description: 'Document workplace accidents, safety incidents, or security events for compliance and insurance.',
+    category: 'business',
+    fieldCount: 14,
+    settings: { paperSize: 'A4', orientation: 'portrait', showPageNumbers: true, primaryColor: '#DC2626' },
+    pages: [
+      {
+        title: 'Incident Report',
+        order: 0,
+        fields: [
+          {
+            id: 'f-14-1', type: 'form-header', label: 'Incident Report Form',
+            metadata: 'Complete as soon as possible after the incident. Be factual and accurate.',
+            required: false, width: 'full', order: 0,
+          },
+          {
+            id: 'f-14-2', type: 'text', label: 'Reporter Name', placeholder: 'Your full name',
+            required: true, width: 'half', order: 1,
+          },
+          {
+            id: 'f-14-3', type: 'text', label: 'Job Title / Department', placeholder: 'Your role',
+            required: false, width: 'half', order: 2,
+          },
+          {
+            id: 'f-14-4', type: 'date', label: 'Date of Incident',
+            required: true, width: 'half', order: 3,
+          },
+          {
+            id: 'f-14-5', type: 'time', label: 'Time of Incident',
+            required: false, width: 'half', order: 4,
+          },
+          {
+            id: 'f-14-6', type: 'text', label: 'Location of Incident', placeholder: 'e.g. Warehouse Floor B, Room 204',
+            required: true, width: 'full', order: 5,
+          },
+          {
+            id: 'f-14-7', type: 'radio', label: 'Type of Incident',
+            options: [
+              { label: 'Workplace Injury', value: 'injury' },
+              { label: 'Property Damage', value: 'property' },
+              { label: 'Security Breach', value: 'security' },
+              { label: 'Near Miss', value: 'near_miss' },
+              { label: 'Other', value: 'other' },
+            ],
+            required: true, width: 'half', order: 6,
+          },
+          {
+            id: 'f-14-8', type: 'radio', label: 'Severity',
+            options: [
+              { label: 'Critical', value: 'critical' },
+              { label: 'Major', value: 'major' },
+              { label: 'Minor', value: 'minor' },
+              { label: 'No Injury', value: 'none' },
+            ],
+            required: false, width: 'half', order: 7,
+          },
+          {
+            id: 'f-14-9', type: 'textarea', label: 'Description of Incident', placeholder: 'Describe exactly what happened, in chronological order…',
+            required: true, width: 'full', order: 8,
+          },
+          {
+            id: 'f-14-10', type: 'textarea', label: 'Immediate Action Taken', placeholder: 'What steps were immediately taken after the incident?',
+            required: false, width: 'full', order: 9,
+          },
+          {
+            id: 'f-14-11', type: 'text', label: 'Witness Name(s)', placeholder: 'Names of any witnesses',
+            required: false, width: 'full', order: 10,
+          },
+          {
+            id: 'f-14-12', type: 'checkbox', label: 'Medical attention was required or recommended',
+            required: false, width: 'full', order: 11,
+          },
+          {
+            id: 'f-14-13', type: 'signature', label: 'Reporter Signature',
+            required: true, width: 'half', order: 12,
+          },
+          {
+            id: 'f-14-14', type: 'signature', label: 'Supervisor Signature',
+            required: false, width: 'half', order: 13,
+          },
+        ],
+      },
+    ],
+  },
+
+  // ─────────────────────────────────────────────
+  // 15. Course Evaluation
+  // ─────────────────────────────────────────────
+  {
+    id: 'tmpl-015',
+    name: 'Course Evaluation',
+    description: 'Let students rate instructors, course content, and learning outcomes at the end of a course.',
+    category: 'education',
+    fieldCount: 12,
+    settings: { paperSize: 'A4', orientation: 'portrait', showPageNumbers: false, primaryColor: '#7C3AED' },
+    pages: [
+      {
+        title: 'Course Evaluation',
+        order: 0,
+        fields: [
+          {
+            id: 'f-15-1', type: 'form-header', label: 'Course Evaluation',
+            metadata: 'Your honest feedback helps us improve the learning experience.',
+            required: false, width: 'full', order: 0,
+          },
+          {
+            id: 'f-15-2', type: 'text', label: 'Course Name / Code', placeholder: 'e.g. CS101 Introduction to Programming',
+            required: false, width: 'half', order: 1,
+          },
+          {
+            id: 'f-15-3', type: 'text', label: 'Instructor Name', placeholder: 'Instructor / Professor name',
+            required: false, width: 'half', order: 2,
+          },
+          {
+            id: 'f-15-4', type: 'divider', label: '', required: false, width: 'full', order: 3,
+          },
+          {
+            id: 'f-15-5', type: 'rating', label: 'Overall Course Quality',
+            required: false, width: 'half', order: 4, maxRating: 5,
+          },
+          {
+            id: 'f-15-6', type: 'rating', label: 'Instructor Effectiveness',
+            required: false, width: 'half', order: 5, maxRating: 5,
+          },
+          {
+            id: 'f-15-7', type: 'rating', label: 'Course Materials & Resources',
+            required: false, width: 'half', order: 6, maxRating: 5,
+          },
+          {
+            id: 'f-15-8', type: 'rating', label: 'Workload & Difficulty Level',
+            required: false, width: 'half', order: 7, maxRating: 5,
+          },
+          {
+            id: 'f-15-9', type: 'radio', label: 'Would you recommend this course?',
+            options: [
+              { label: 'Definitely Yes', value: 'yes' },
+              { label: 'Probably Yes', value: 'probably' },
+              { label: 'Probably Not', value: 'probably_not' },
+              { label: 'Definitely Not', value: 'no' },
+            ],
+            required: false, width: 'full', order: 8,
+          },
+          {
+            id: 'f-15-10', type: 'textarea', label: 'What did you enjoy most?', placeholder: 'Share what worked well for you…',
+            required: false, width: 'full', order: 9,
+          },
+          {
+            id: 'f-15-11', type: 'textarea', label: 'What could be improved?', placeholder: 'Constructive feedback is appreciated…',
+            required: false, width: 'full', order: 10,
+          },
+          {
+            id: 'f-15-12', type: 'checkbox', label: 'I consent to this feedback being used anonymously for course improvement.',
+            required: false, width: 'full', order: 11,
+          },
+        ],
+      },
+    ],
+  },
+
+  // ─────────────────────────────────────────────
+  // 16. Leave Request
+  // ─────────────────────────────────────────────
+  {
+    id: 'tmpl-016',
+    name: 'Leave Request Form',
+    description: 'An HR leave application form for employees to request time off with manager approval.',
+    category: 'hr',
+    fieldCount: 10,
+    settings: { paperSize: 'A4', orientation: 'portrait', showPageNumbers: false, primaryColor: '#0EA5E9' },
+    pages: [
+      {
+        title: 'Leave Request',
+        order: 0,
+        fields: [
+          {
+            id: 'f-16-1', type: 'form-header', label: 'Leave Request Form',
+            metadata: 'Submit at least 5 business days in advance. Urgent requests require manager approval.',
+            required: false, width: 'full', order: 0,
+          },
+          {
+            id: 'f-16-2', type: 'text', label: 'Employee Name', placeholder: 'Full name',
+            required: true, width: 'half', order: 1,
+          },
+          {
+            id: 'f-16-3', type: 'text', label: 'Department', placeholder: 'Your department',
+            required: false, width: 'half', order: 2,
+          },
+          {
+            id: 'f-16-4', type: 'date', label: 'Leave Start Date',
+            required: true, width: 'half', order: 3,
+          },
+          {
+            id: 'f-16-5', type: 'date', label: 'Leave End Date',
+            required: true, width: 'half', order: 4,
+          },
+          {
+            id: 'f-16-6', type: 'radio', label: 'Type of Leave',
+            options: [
+              { label: 'Annual / Vacation Leave', value: 'annual' },
+              { label: 'Sick Leave', value: 'sick' },
+              { label: 'Maternity / Paternity Leave', value: 'parental' },
+              { label: 'Unpaid Leave', value: 'unpaid' },
+              { label: 'Other', value: 'other' },
+            ],
+            required: true, width: 'full', order: 5,
+          },
+          {
+            id: 'f-16-7', type: 'textarea', label: 'Reason for Leave', placeholder: 'Brief description of reason for leave…',
+            required: false, width: 'full', order: 6,
+          },
+          {
+            id: 'f-16-8', type: 'text', label: 'Covering Employee (if applicable)', placeholder: 'Name of colleague covering duties',
+            required: false, width: 'full', order: 7,
+          },
+          {
+            id: 'f-16-9', type: 'signature', label: 'Employee Signature',
+            required: true, width: 'half', order: 8,
+          },
+          {
+            id: 'f-16-10', type: 'signature', label: 'Manager Approval',
+            required: false, width: 'half', order: 9,
+          },
+        ],
+      },
+    ],
+  },
 ]
 
 export const TEMPLATE_CATEGORIES: Record<string, string> = {
@@ -742,5 +1360,8 @@ export const TEMPLATE_CATEGORIES: Record<string, string> = {
   education: 'Education',
   events: 'Events',
   surveys: 'Surveys',
+  legal: 'Legal',
+  'real-estate': 'Real Estate',
+  nonprofit: 'Nonprofit',
   general: 'General',
 }

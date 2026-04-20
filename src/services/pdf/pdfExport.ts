@@ -80,7 +80,7 @@ function fieldHeight(f: FormField): number {
     const rows = f.tableRows ?? 3
     return (LABEL_FS + 4) + 18 + rows * 18 + ROW_GAP
   }
-  if (f.type === 'radio' || f.type === 'checkbox-group') {
+  if (f.type === 'radio' || f.type === 'checkbox-group' || f.type === 'dropdown') {
     const opts = f.options?.length ?? 2
     return (LABEL_FS + 4) + opts * 16 + ROW_GAP
   }
@@ -161,12 +161,13 @@ function drawField(f: FormField, x: number, y: number, w: number, ctx: Ctx): num
     return fieldHeight(f)
   }
 
-  // dropdown
+  // dropdown — rendered as radio circles on paper (dropdowns can't be used on print)
   if (f.type === 'dropdown') {
-    page.drawRectangle({ x, y: inputY - FIELD_H, width: w, height: FIELD_H, borderColor: gray, borderWidth: 0.75, color: white })
-    page.drawText('▼', { x: x + w - 14, y: inputY - FIELD_H + 8, size: 8, font: regular, color: gray })
-    if ((f.options ?? []).length > 0) {
-      page.drawText(clampText(f.options![0].label, regular, LABEL_FS, w - 20), { x: x + 6, y: inputY - FIELD_H + 8, size: LABEL_FS, font: regular, color: lightGray })
+    let oy = inputY
+    for (const opt of (f.options ?? [])) {
+      page.drawCircle({ x: x + 5, y: oy - 5, size: 5, borderColor: gray, borderWidth: 0.75, color: white })
+      page.drawText(clampText(opt.label, regular, LABEL_FS, w - 18), { x: x + 14, y: oy - 9, size: LABEL_FS, font: regular, color: black })
+      oy -= 16
     }
     return fieldHeight(f)
   }

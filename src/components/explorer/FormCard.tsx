@@ -35,7 +35,7 @@ export default function FormCard({ form, onDeleteRequest }: FormCardProps) {
       whileTap={{ scale: 0.99 }}
       transition={{ duration: 0.12 }}
     >
-      <div className="form-card" onClick={handleOpen}>
+      <div className="form-card" data-form-id={form.id} onClick={handleOpen}>
         <div className="form-card__icon">
           <FileText size={28} />
         </div>

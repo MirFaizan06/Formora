@@ -267,6 +267,13 @@
 
 .canvas-field__label--empty { color: var(--text-muted); font-style: italic; }
 
+.canvas-field__print-hint {
+  font-size: 0.6875rem;
+  color: #f59e0b;
+  opacity: 0.85;
+  margin-top: 2px;
+}
+
 .canvas-empty {
   flex: 1;
   display: flex;

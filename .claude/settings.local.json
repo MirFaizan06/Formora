@@ -9,7 +9,9 @@
       "Bash(powershell -Command \"Remove-Item -Recurse -Force 'C:\\\\Users\\\\Faizan\\\\Desktop\\\\FormApp\\\\release'\")",
       "Bash(grep -v \"^$\")",
       "Bash(git init *)",
-      "Bash(git remote *)"
+      "Bash(git remote *)",
+      "Bash(git config *)",
+      "Bash(git branch *)"
     ]
   }
 }
