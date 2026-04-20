@@ -147,7 +147,7 @@ electron/
 
 ## Developer
 
-**Faizan Mir** — Grey Phoenix Studios  
+**Faizan Mir**  
 mirfaizan8803@gmail.com
 
 ---
