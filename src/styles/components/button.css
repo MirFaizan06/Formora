@@ -1,0 +1,274 @@
+/* ==========================================================================
+   Button — FormApp
+   ========================================================================== */
+
+/* ---- Base ---- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  height: 34px;
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  font-family: var(--font-sans);
+  line-height: 1;
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+  user-select: none;
+  transition:
+    background-color var(--transition),
+    border-color var(--transition),
+    color var(--transition),
+    box-shadow var(--transition),
+    opacity var(--transition);
+  position: relative;
+  overflow: hidden;
+  -webkit-app-region: no-drag;
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn:disabled,
+.btn[aria-disabled="true"] {
+  opacity: 0.45;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* ---- Sizes ---- */
+
+.btn--xs {
+  height: 24px;
+  padding: var(--space-1) var(--space-2);
+  font-size: var(--text-xs);
+  border-radius: var(--radius-sm);
+  gap: var(--space-1);
+}
+
+.btn--sm {
+  height: 28px;
+  padding: var(--space-1) var(--space-3);
+  font-size: var(--text-sm);
+}
+
+.btn--lg {
+  height: 42px;
+  padding: var(--space-3) var(--space-6);
+  font-size: var(--text-md);
+  border-radius: var(--radius-md);
+}
+
+/* ---- Primary ---- */
+
+.btn-primary {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  color: #fff;
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-hover);
+  border-color: var(--accent-hover);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-primary:active {
+  background-color: var(--accent-active);
+  border-color: var(--accent-active);
+  box-shadow: none;
+}
+
+/* ---- Secondary ---- */
+
+.btn-secondary {
+  background-color: var(--bg-tertiary);
+  border-color: var(--border-color);
+  color: var(--text-primary);
+}
+
+.btn-secondary:hover {
+  background-color: var(--bg-hover);
+  border-color: var(--border-strong);
+}
+
+.btn-secondary:active {
+  background-color: var(--bg-active);
+}
+
+/* ---- Danger ---- */
+
+.btn-danger {
+  background-color: var(--danger-color);
+  border-color: var(--danger-color);
+  color: #fff;
+}
+
+.btn-danger:hover {
+  background-color: var(--danger-hover);
+  border-color: var(--danger-hover);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-danger:active {
+  filter: brightness(0.9);
+}
+
+/* ---- Ghost ---- */
+
+.btn-ghost {
+  background-color: transparent;
+  border-color: transparent;
+  color: var(--text-secondary);
+}
+
+.btn-ghost:hover {
+  background-color: var(--bg-hover);
+  color: var(--text-primary);
+}
+
+.btn-ghost:active {
+  background-color: var(--bg-active);
+}
+
+/* ---- Outline ---- */
+
+.btn-outline {
+  background-color: transparent;
+  border-color: var(--border-color);
+  color: var(--text-primary);
+}
+
+.btn-outline:hover {
+  background-color: var(--bg-hover);
+  border-color: var(--border-strong);
+}
+
+/* ---- Accent ghost ---- */
+
+.btn-accent-ghost {
+  background-color: transparent;
+  border-color: transparent;
+  color: var(--accent-color);
+}
+
+.btn-accent-ghost:hover {
+  background-color: var(--accent-subtle);
+  color: var(--accent-hover);
+}
+
+/* ---- Icon button ---- */
+
+.btn-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border-radius: var(--radius-md);
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition:
+    background-color var(--transition),
+    color var(--transition),
+    border-color var(--transition);
+  flex-shrink: 0;
+  -webkit-app-region: no-drag;
+}
+
+.btn-icon:hover {
+  background-color: var(--bg-hover);
+  color: var(--text-primary);
+}
+
+.btn-icon:active {
+  background-color: var(--bg-active);
+}
+
+.btn-icon:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
+.btn-icon:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.btn-icon--sm {
+  width: 26px;
+  height: 26px;
+}
+
+.btn-icon--lg {
+  width: 40px;
+  height: 40px;
+}
+
+.btn-icon--active,
+.btn-icon[aria-pressed="true"] {
+  background-color: var(--accent-subtle);
+  color: var(--accent-color);
+  border-color: transparent;
+}
+
+/* ---- Full width ---- */
+
+.btn--full {
+  width: 100%;
+}
+
+/* ---- Loading state ---- */
+
+.btn--loading {
+  pointer-events: none;
+  color: transparent;
+}
+
+.btn--loading::after {
+  content: '';
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border: 2px solid currentColor;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: btn-spin 0.65s linear infinite;
+  color: inherit;
+}
+
+.btn-primary.btn--loading::after {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+@keyframes btn-spin {
+  to { transform: rotate(360deg); }
+}
+
+.btn--danger-hover:hover { color: var(--danger-color); }
+
+.btn__spinner {
+  width: 14px; height: 14px;
+  border: 2px solid currentColor;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: btn-spin 0.65s linear infinite;
+  display: inline-block;
+}

@@ -1,0 +1,131 @@
+/* ==========================================================================
+   Keyboard Shortcuts Modal — Formora
+   ========================================================================== */
+
+.keyboard-shortcuts {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+.kbd-reset-all-row {
+  display: flex;
+  justify-content: flex-end;
+  padding-bottom: var(--space-2);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.kbd-category {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.kbd-category__title {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  padding: 0 var(--space-2);
+}
+
+.keyboard-shortcuts__table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.keyboard-shortcuts__table tbody tr {
+  transition: background var(--transition);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.keyboard-shortcuts__table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.keyboard-shortcuts__table tbody tr:hover {
+  background: var(--bg-hover);
+}
+
+.kbd-row--custom .kbd-action-cell {
+  color: var(--accent-color);
+}
+
+.keyboard-shortcuts__table tbody td {
+  padding: var(--space-2) var(--space-3);
+  font-size: 0.8125rem;
+  color: var(--text-primary);
+  vertical-align: middle;
+}
+
+.kbd-action-cell { width: 45%; color: var(--text-secondary); }
+.kbd-keys-cell { width: 35%; }
+.kbd-actions-cell { width: 20%; text-align: right; }
+
+.kbd-row-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 2px;
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+
+.keyboard-shortcuts__table tbody tr:hover .kbd-row-actions {
+  opacity: 1;
+}
+
+/* Recording state */
+.kbd-recording {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.kbd-recording__hint {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  min-width: 100px;
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+/* kbd badge */
+.kbd {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px 7px;
+  font-size: 0.6875rem;
+  font-family: var(--font-mono, monospace);
+  font-weight: 600;
+  color: var(--text-primary);
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-strong, var(--border-color));
+  border-radius: var(--radius-sm);
+  box-shadow: 0 1px 0 var(--border-strong, var(--border-color));
+  white-space: nowrap;
+  line-height: 1.6;
+}
+
+.kbd-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.kbd-hint {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-align: center;
+  padding-top: var(--space-2);
+  border-top: 1px solid var(--border-subtle);
+}

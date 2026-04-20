@@ -1,0 +1,92 @@
+/* ==========================================================================
+   Dark Theme — FormApp (Discord-style)
+   ========================================================================== */
+
+[data-theme="dark"] {
+  /* ---- Backgrounds ---- */
+  --bg-primary:   #1e1f2e;
+  --bg-secondary: #16172b;
+  --bg-tertiary:  #252640;
+  --bg-hover:     #2e2f4a;
+  --bg-active:    #363760;
+  --bg-overlay:   rgba(10, 10, 20, 0.75);
+
+  /* ---- Text ---- */
+  --text-primary:   #e8e9f3;
+  --text-secondary: #9899b5;
+  --text-muted:     #5c5d7a;
+  --text-inverse:   #1e1f2e;
+
+  /* ---- Accent ---- */
+  --accent-color:  #7c6af7;
+  --accent-hover:  #6b59e6;
+  --accent-active: #5a48d5;
+  --accent-subtle: #2a2650;
+  --accent-text:   #c3bbfc;
+
+  /* ---- Semantic ---- */
+  --danger-color:  #e05c6b;
+  --danger-hover:  #cc4d5b;
+  --danger-subtle: #3a1e22;
+  --success-color: #56c596;
+  --success-hover: #44b484;
+  --success-subtle:#1a3328;
+  --warning-color: #f5a623;
+  --warning-hover: #e09516;
+  --warning-subtle:#3a2a0e;
+  --info-color:    #4da8da;
+  --info-subtle:   #152535;
+
+  /* ---- Borders ---- */
+  --border-color:  #2e2f4a;
+  --border-subtle: #252640;
+  --border-strong: #3d3e5c;
+  --border-focus:  #7c6af7;
+
+  /* ---- Shadows ---- */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.5);
+  --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.6);
+
+  /* ---- Radii ---- */
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-full: 9999px;
+
+  /* ---- Spacing (8px grid) ---- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-7: 28px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+
+  /* ---- Layout ---- */
+  --sidebar-width:    240px;
+  --toolbar-height:   48px;
+  --titlebar-height:  32px;
+  --properties-width: 280px;
+  --palette-width:    220px;
+
+  /* ---- Transitions ---- */
+  --transition:       0.15s ease;
+  --transition-slow:  0.25s ease;
+  --transition-fast:  0.1s ease;
+
+  /* ---- Z-index scale ---- */
+  --z-base:    0;
+  --z-above:   10;
+  --z-overlay: 100;
+  --z-modal:   200;
+  --z-toast:   300;
+  --z-tooltip: 400;
+}

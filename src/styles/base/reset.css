@@ -1,0 +1,137 @@
+/* ==========================================================================
+   Reset & Base — FormApp
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+  tab-size: 4;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden; /* Electron — no native scroll on body */
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* ---- Elements ---- */
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: 1.2;
+}
+
+p {
+  overflow-wrap: break-word;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid var(--border-color);
+  margin: var(--space-4) 0;
+}
+
+/* ---- Scrollbar ---- */
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 99px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* ---- Selection ---- */
+
+::selection {
+  background-color: var(--accent-color);
+  color: #fff;
+}
+
+/* ---- Focus visible (accessibility) ---- */
+
+:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}

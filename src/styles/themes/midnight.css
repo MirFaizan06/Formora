@@ -1,0 +1,92 @@
+/* ==========================================================================
+   Midnight Theme — FormApp (OLED/True Black)
+   ========================================================================== */
+
+[data-theme="midnight"] {
+    /* ---- Backgrounds ---- */
+    --bg-primary: #000000;
+    --bg-secondary: #0a0a0a;
+    --bg-tertiary: #121212;
+    --bg-hover: #1c1c1c;
+    --bg-active: #242424;
+    --bg-overlay: rgba(0, 0, 0, 0.9);
+
+    /* ---- Text ---- */
+    --text-primary: #ffffff;
+    --text-secondary: #a0a0a0;
+    --text-muted: #666666;
+    --text-inverse: #000000;
+
+    /* ---- Accent ---- */
+    --accent-color: #3b82f6;
+    --accent-hover: #2563eb;
+    --accent-active: #1d4ed8;
+    --accent-subtle: #0f172a;
+    --accent-text: #93c5fd;
+
+    /* ---- Semantic ---- */
+    --danger-color: #ff453a;
+    --danger-hover: #d12f26;
+    --danger-subtle: #200a0a;
+    --success-color: #32d74b;
+    --success-hover: #248a33;
+    --success-subtle: #0a1a0c;
+    --warning-color: #ffd60a;
+    --warning-hover: #ffcc00;
+    --warning-subtle: #1a1600;
+    --info-color: #64d2ff;
+    --info-subtle: #0a1a20;
+
+    /* ---- Borders ---- */
+    --border-color: #222222;
+    --border-subtle: #161616;
+    --border-strong: #333333;
+    --border-focus: #3b82f6;
+
+    /* ---- Shadows ---- */
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.5);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.6);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.7);
+    --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.8);
+
+    /* ---- Radii ---- */
+    --radius-xs: 2px;
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-xl: 16px;
+    --radius-full: 9999px;
+
+    /* ---- Spacing (8px grid) ---- */
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-5: 20px;
+    --space-6: 24px;
+    --space-7: 28px;
+    --space-8: 32px;
+    --space-10: 40px;
+    --space-12: 48px;
+    --space-16: 64px;
+
+    /* ---- Layout ---- */
+    --sidebar-width: 240px;
+    --toolbar-height: 48px;
+    --titlebar-height: 32px;
+    --properties-width: 280px;
+    --palette-width: 220px;
+
+    /* ---- Transitions ---- */
+    --transition: 0.15s ease;
+    --transition-slow: 0.25s ease;
+    --transition-fast: 0.1s ease;
+
+    /* ---- Z-index scale ---- */
+    --z-base: 0;
+    --z-above: 10;
+    --z-overlay: 100;
+    --z-modal: 200;
+    --z-toast: 300;
+    --z-tooltip: 400;
+}

@@ -1,0 +1,92 @@
+/* ==========================================================================
+   Crimson Theme — FormApp (Rich & Warm)
+   ========================================================================== */
+
+[data-theme="crimson"] {
+    /* ---- Backgrounds ---- */
+    --bg-primary: #1f1616;
+    --bg-secondary: #171010;
+    --bg-tertiary: #2b1f1f;
+    --bg-hover: #3d2b2b;
+    --bg-active: #4d3636;
+    --bg-overlay: rgba(20, 10, 10, 0.85);
+
+    /* ---- Text ---- */
+    --text-primary: #f3e8e8;
+    --text-secondary: #b59898;
+    --text-muted: #7a5c5c;
+    --text-inverse: #1f1616;
+
+    /* ---- Accent ---- */
+    --accent-color: #e05c6b;
+    --accent-hover: #cc4d5b;
+    --accent-active: #b33d4a;
+    --accent-subtle: #3a1e22;
+    --accent-text: #fcbbbb;
+
+    /* ---- Semantic ---- */
+    --danger-color: #ff3b30;
+    --danger-hover: #d73027;
+    --danger-subtle: #3a1e1e;
+    --success-color: #56c596;
+    --success-hover: #44b484;
+    --success-subtle: #1a3328;
+    --warning-color: #f5a623;
+    --warning-hover: #e09516;
+    --warning-subtle: #3a2a0e;
+    --info-color: #4da8da;
+    --info-subtle: #152535;
+
+    /* ---- Borders ---- */
+    --border-color: #3d2b2b;
+    --border-subtle: #2b1f1f;
+    --border-strong: #5c3d3d;
+    --border-focus: #e05c6b;
+
+    /* ---- Shadows ---- */
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.5);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.6);
+    --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.7);
+
+    /* ---- Radii ---- */
+    --radius-xs: 2px;
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-xl: 16px;
+    --radius-full: 9999px;
+
+    /* ---- Spacing (8px grid) ---- */
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-5: 20px;
+    --space-6: 24px;
+    --space-7: 28px;
+    --space-8: 32px;
+    --space-10: 40px;
+    --space-12: 48px;
+    --space-16: 64px;
+
+    /* ---- Layout ---- */
+    --sidebar-width: 240px;
+    --toolbar-height: 48px;
+    --titlebar-height: 32px;
+    --properties-width: 280px;
+    --palette-width: 220px;
+
+    /* ---- Transitions ---- */
+    --transition: 0.15s ease;
+    --transition-slow: 0.25s ease;
+    --transition-fast: 0.1s ease;
+
+    /* ---- Z-index scale ---- */
+    --z-base: 0;
+    --z-above: 10;
+    --z-overlay: 100;
+    --z-modal: 200;
+    --z-toast: 300;
+    --z-tooltip: 400;
+}

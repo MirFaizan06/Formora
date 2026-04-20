@@ -1,0 +1,320 @@
+/* ==========================================================================
+   App Layout — FormApp
+   ========================================================================== */
+
+/* ---- Root Shell ---- */
+
+.app-layout {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+}
+
+/* ---- Titlebar ---- */
+
+.titlebar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--titlebar-height);
+  min-height: var(--titlebar-height);
+  background-color: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-subtle);
+  padding: 0 var(--space-3);
+  /* Electron draggable region */
+  -webkit-app-region: drag;
+  user-select: none;
+  position: relative;
+  z-index: var(--z-above);
+  flex-shrink: 0;
+}
+
+.titlebar__app-name {
+  font-size: var(--text-xs);
+  font-weight: var(--weight-semibold);
+  color: var(--text-secondary);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+}
+
+.titlebar__center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+  pointer-events: none;
+}
+
+.titlebar__window-controls {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  /* Controls must NOT be draggable */
+  -webkit-app-region: no-drag;
+}
+
+.titlebar__win-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 20px;
+  border-radius: var(--radius-sm);
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: background var(--transition), color var(--transition);
+  -webkit-app-region: no-drag;
+  font-size: 11px;
+}
+
+.titlebar__win-btn:hover {
+  background: var(--bg-hover);
+  color: var(--text-primary);
+}
+
+.titlebar__win-btn--close:hover {
+  background: var(--danger-color);
+  color: #fff;
+}
+
+/* ---- App Body ---- */
+
+.app-body {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  overflow: hidden;
+  min-height: 0;
+}
+
+/* ---- Sidebar ---- */
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  width: var(--sidebar-width);
+  min-width: var(--sidebar-width);
+  max-width: var(--sidebar-width);
+  height: 100%;
+  background-color: var(--bg-secondary);
+  border-right: 1px solid var(--border-color);
+  overflow: hidden;
+  flex-shrink: 0;
+  z-index: var(--z-above);
+  transition: width var(--transition-slow), min-width var(--transition-slow);
+}
+
+.sidebar--collapsed {
+  width: 48px;
+  min-width: 48px;
+}
+
+.sidebar__scroll {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: var(--space-2) 0;
+}
+
+.sidebar__footer {
+  border-top: 1px solid var(--border-subtle);
+  padding: var(--space-2) 0;
+  flex-shrink: 0;
+}
+
+/* ---- Main Area ---- */
+
+.main-area {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow: hidden;
+  min-width: 0;
+}
+
+/* ---- Toolbar ---- */
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  height: var(--toolbar-height);
+  min-height: var(--toolbar-height);
+  background-color: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+  padding: 0 var(--space-3);
+  gap: var(--space-2);
+  flex-shrink: 0;
+  z-index: var(--z-above);
+  user-select: none;
+}
+
+/* ---- Canvas Area ---- */
+
+.canvas-area {
+  flex: 1;
+  overflow: auto;
+  background-color: var(--bg-primary);
+  position: relative;
+  min-height: 0;
+}
+
+/* ---- Status Bar ---- */
+
+.status-bar {
+  display: flex;
+  align-items: center;
+  height: 22px;
+  min-height: 22px;
+  background-color: var(--accent-color);
+  padding: 0 var(--space-3);
+  gap: var(--space-4);
+  flex-shrink: 0;
+}
+
+.status-bar__item {
+  font-size: var(--text-xs);
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: var(--weight-medium);
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  cursor: default;
+}
+
+.status-bar__item:hover {
+  color: #fff;
+}
+
+/* ---- Resize handle (sidebar) ---- */
+
+.resize-handle {
+  width: 4px;
+  height: 100%;
+  cursor: col-resize;
+  background: transparent;
+  flex-shrink: 0;
+  position: relative;
+  transition: background var(--transition);
+}
+
+.resize-handle:hover,
+.resize-handle--active {
+  background: var(--accent-color);
+}
+
+/* ---- Panel layout (builder: palette + canvas + properties) ---- */
+
+.panel-layout {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  overflow: hidden;
+  min-height: 0;
+}
+
+.panel-layout__left {
+  width: var(--palette-width);
+  min-width: var(--palette-width);
+  flex-shrink: 0;
+  border-right: 1px solid var(--border-color);
+  overflow-y: auto;
+  background-color: var(--bg-secondary);
+}
+
+.panel-layout__center {
+  flex: 1;
+  overflow: auto;
+  min-width: 0;
+}
+
+.panel-layout__right {
+  width: var(--properties-width);
+  min-width: var(--properties-width);
+  flex-shrink: 0;
+  border-left: 1px solid var(--border-color);
+  overflow-y: auto;
+  background-color: var(--bg-secondary);
+}
+
+/* ---- Empty state ---- */
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-4);
+  padding: var(--space-12);
+  text-align: center;
+  color: var(--text-muted);
+  height: 100%;
+  min-height: 200px;
+}
+
+.empty-state__icon {
+  width: 48px;
+  height: 48px;
+  opacity: 0.4;
+}
+
+.empty-state__title {
+  font-size: var(--text-md);
+  font-weight: var(--weight-semibold);
+  color: var(--text-secondary);
+}
+
+.empty-state__description {
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+  max-width: 280px;
+  line-height: var(--leading-relaxed);
+}
+
+/* ---- Loading skeleton ---- */
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--bg-tertiary) 25%,
+    var(--bg-hover) 50%,
+    var(--bg-tertiary) 75%
+  );
+  background-size: 200% 100%;
+  animation: skeleton-shimmer 1.5s infinite;
+  border-radius: var(--radius-sm);
+}
+
+@keyframes skeleton-shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* ---- TitleBar component aliases ---- */
+.titlebar__drag-region { flex: 1; height: 100%; -webkit-app-region: drag; }
+.titlebar__title { font-size: var(--text-xs); font-weight: 700; color: var(--accent-color); letter-spacing: 0.04em; }
+.titlebar__badge { font-size: 10px; color: var(--text-muted); letter-spacing: 0.02em; margin-left: var(--space-2); }
+.titlebar__controls { display: flex; align-items: center; gap: var(--space-1); -webkit-app-region: no-drag; }
+.titlebar__btn { display: flex; align-items: center; justify-content: center; width: 30px; height: 22px; border-radius: var(--radius-sm); border: none; background: transparent; color: var(--text-muted); cursor: pointer; transition: background var(--transition), color var(--transition); -webkit-app-region: no-drag; }
+.titlebar__btn:hover { background: var(--bg-hover); color: var(--text-primary); }
+.titlebar__btn--close:hover { background: var(--danger-color); color: #fff; }
+
+/* ---- Sidebar component aliases ---- */
+.sidebar__logo { display: flex; align-items: center; padding: var(--space-3) var(--space-4); border-bottom: 1px solid var(--border-subtle); height: 48px; flex-shrink: 0; }
+.sidebar__logo-text { font-size: var(--text-sm); font-weight: 700; color: var(--accent-color); letter-spacing: -0.01em; }
+.sidebar__bottom { margin-top: auto; border-top: 1px solid var(--border-subtle); padding: var(--space-2) 0; }
+.sidebar-item--collapse {}
+.sidebar-item { display: flex; align-items: center; gap: var(--space-3); padding: var(--space-2) var(--space-4); color: var(--text-secondary); font-size: 0.875rem; cursor: pointer; transition: var(--transition); border: none; background: transparent; width: 100%; text-align: left; border-radius: 0; position: relative; }
+.sidebar-item:hover { background: var(--bg-hover); color: var(--text-primary); }
+.sidebar-item--active { color: var(--accent-color); background: var(--accent-subtle); }
+.sidebar-item--active::before { content: ''; position: absolute; left: 0; top: 4px; bottom: 4px; width: 3px; background: var(--accent-color); border-radius: 0 2px 2px 0; }
+.sidebar-item__icon { flex-shrink: 0; display: flex; align-items: center; }
+.sidebar-item__label { font-size: 0.875rem; white-space: nowrap; overflow: hidden; }
+.sidebar-nav { flex: 1; overflow-y: auto; padding: var(--space-2) 0; }

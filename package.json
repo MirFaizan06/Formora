@@ -1,0 +1,92 @@
+{
+  "name": "formora",
+  "version": "1.0.0",
+  "description": "Premium Form Builder & Export Desktop App by Grey Phoenix Studios",
+  "main": "dist-electron/main.js",
+  "author": {
+    "name": "Faizan Mir",
+    "email": "mirfaizan8803@gmail.com"
+  },
+  "license": "ISC",
+  "scripts": {
+    "dev": "npm run electron:compile && concurrently -k -n VITE,ELECTRON -c cyan,yellow \"vite\" \"npm run electron:dev\"",
+    "electron:dev": "wait-on http://localhost:5173 && cross-env NODE_ENV=development electron .",
+    "electron:compile": "tsc -p tsconfig.electron.json",
+    "build": "node scripts/generate-icon.cjs && vite build && tsc -p tsconfig.electron.json",
+    "electron:build": "npm run build && electron-builder --win",
+    "preview": "vite preview"
+  },
+  "build": {
+    "appId": "com.greyphoenix.formora",
+    "productName": "Formora",
+    "copyright": "Copyright © 2026 Faizan Mir — Grey Phoenix Studios",
+    "asar": true,
+    "directories": {
+      "output": "release",
+      "buildResources": "build"
+    },
+    "files": [
+      "dist/**/*",
+      "dist-electron/**/*",
+      "!dist-electron/**/*.map"
+    ],
+    "extraResources": [
+      {
+        "from": "build/icon.png",
+        "to": "icon.png"
+      }
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "build/icon.ico",
+      "artifactName": "${productName}-Setup-${version}.${ext}"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Formora",
+      "installerIcon": "build/icon.ico",
+      "uninstallerIcon": "build/icon.ico",
+      "installerHeaderIcon": "build/icon.ico",
+      "license": "LICENSE.txt"
+    },
+    "publish": null
+  },
+  "devDependencies": {
+    "@types/node": "^25.6.0",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.1",
+    "concurrently": "^9.2.1",
+    "cross-env": "^10.1.0",
+    "electron": "^41.2.1",
+    "electron-builder": "^26.8.1",
+    "typescript": "^6.0.3",
+    "vite": "^8.0.8",
+    "wait-on": "^9.0.5"
+  },
+  "dependencies": {
+    "framer-motion": "^12.38.0",
+    "lucide-react": "^1.8.0",
+    "pdf-lib": "^1.17.1",
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5",
+    "react-hot-toast": "^2.6.0",
+    "zustand": "^5.0.12"
+  }
+}

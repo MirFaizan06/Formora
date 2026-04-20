@@ -1,0 +1,29 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+dist-electron/
+release/
+
+# Electron builder cache
+.electron-builder.cache/
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/settings.json
+.idea/
+
+# Env
+.env
+.env.local
+
+# TypeScript build info
+*.tsbuildinfo

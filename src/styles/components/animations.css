@@ -1,0 +1,81 @@
+/* ==========================================================================
+   Animations — FormApp
+   ========================================================================== */
+
+/* ---- Utility Classes ---- */
+
+.fade-in {
+  animation: fadeIn 0.2s ease forwards;
+}
+
+.slide-up {
+  animation: slideUp 0.2s ease forwards;
+}
+
+.scale-in {
+  animation: scaleIn 0.15s ease forwards;
+}
+
+.shimmer-text {
+  background: linear-gradient(
+    90deg,
+    var(--text-primary) 0%,
+    var(--accent-color) 50%,
+    var(--text-primary) 100%
+  );
+  background-size: 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmerText 3s linear infinite;
+}
+
+/* ---- Keyframes ---- */
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes shimmerText {
+  0%   { background-position: 200% center; }
+  100% { background-position: -200% center; }
+}
+
+/* ---- Global Easing ---- */
+
+*,
+*::before,
+*::after {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ---- Scrollbar Styling ---- */
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}

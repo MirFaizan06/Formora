@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(\"C:/Program Files/nodejs/node.exe\" -e \"const fs=require\\('fs'\\); const files=[]; function walk\\(d\\){fs.readdirSync\\(d\\).forEach\\(f=>{const p=d+'/'+f; if\\(fs.statSync\\(p\\).isDirectory\\(\\)&&!['node_modules','dist','dist-electron','release','.git','build'].includes\\(f\\)\\)walk\\(p\\); else if\\(p.match\\(/\\\\.\\(ts|tsx|css|json\\)$/\\)&&!p.includes\\('node_modules'\\)\\)files.push\\(p\\)}\\)} walk\\('.'\\); console.log\\(files.join\\('\\\\n'\\)\\)\")",
+      "Bash(\"C:/Program Files/nodejs/npm.cmd\" run electron:build -- --win)",
+      "Bash(powershell -Command \"Remove-Item -Recurse -Force 'C:\\\\Users\\\\Faizan\\\\Desktop\\\\FormApp\\\\release' -ErrorAction SilentlyContinue; Write-Host done\")",
+      "Bash(powershell -Command \"Get-ChildItem 'C:\\\\Users\\\\Faizan\\\\Desktop\\\\FormApp\\\\release' -Recurse | Select-Object -First 5 FullName\")",
+      "Bash(powershell -Command 'Get-Process | Where-Object { $_.Name -match '\\\\''Formora|electron|Electron'\\\\'' } | ForEach-Object { Write-Host $_.Name $_.Id; Stop-Process -Id $_.Id -Force -ErrorAction SilentlyContinue }')",
+      "Bash(powershell -Command \"Remove-Item -Recurse -Force 'C:\\\\Users\\\\Faizan\\\\Desktop\\\\FormApp\\\\release'\")",
+      "Bash(grep -v \"^$\")",
+      "Bash(git init *)",
+      "Bash(git remote *)"
+    ]
+  }
+}

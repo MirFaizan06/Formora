@@ -1,0 +1,330 @@
+/* ==========================================================================
+   Explorer — FormApp (Form List / Grid)
+   ========================================================================== */
+
+/* ---- Explorer layout ---- */
+
+.explorer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+
+.explorer__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-4) var(--space-5);
+  border-bottom: 1px solid var(--border-color);
+  flex-shrink: 0;
+  gap: var(--space-3);
+}
+
+.explorer__title {
+  font-size: var(--text-lg);
+  font-weight: var(--weight-semibold);
+  color: var(--text-primary);
+}
+
+.explorer__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.explorer__toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-3) var(--space-5);
+  border-bottom: 1px solid var(--border-subtle);
+  gap: var(--space-3);
+  flex-shrink: 0;
+}
+
+.explorer__search {
+  flex: 1;
+  max-width: 320px;
+}
+
+.explorer__view-toggle {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.explorer__body {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--space-5);
+}
+
+/* ---- Grid layout ---- */
+
+.explorer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: var(--space-4);
+  align-content: start;
+}
+
+/* ---- List layout ---- */
+
+.explorer-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+/* ==========================================================================
+   Form Card
+   ========================================================================== */
+
+.form-card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  transition:
+    border-color var(--transition),
+    box-shadow var(--transition),
+    transform var(--transition);
+  user-select: none;
+}
+
+.form-card:hover {
+  border-color: var(--accent-color);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.form-card:active {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+}
+
+.form-card:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
+/* ---- Card thumbnail / preview area ---- */
+
+.form-card__preview {
+  height: 120px;
+  background: linear-gradient(
+    135deg,
+    var(--bg-tertiary) 0%,
+    var(--bg-hover) 100%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border-subtle);
+  flex-shrink: 0;
+}
+
+.form-card__preview-icon {
+  color: var(--text-muted);
+  opacity: 0.4;
+}
+
+.form-card__preview-thumbnail {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Show actions overlay on hover */
+.form-card__preview-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  opacity: 0;
+  transition: opacity var(--transition-slow);
+}
+
+.form-card:hover .form-card__preview-overlay {
+  opacity: 1;
+}
+
+/* ---- Card content ---- */
+
+.form-card__content {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-3) var(--space-4);
+  gap: var(--space-1);
+  flex: 1;
+}
+
+/* ---- Title ---- */
+
+.form-card__title {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  color: var(--text-primary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  line-height: var(--leading-snug);
+}
+
+/* ---- Meta ---- */
+
+.form-card__meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.form-card__meta-item {
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.form-card__meta-dot {
+  width: 3px;
+  height: 3px;
+  border-radius: var(--radius-full);
+  background: var(--text-muted);
+  opacity: 0.5;
+}
+
+/* ---- Actions (footer row) ---- */
+
+.form-card__actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--space-1);
+  padding: var(--space-2) var(--space-3);
+  border-top: 1px solid var(--border-subtle);
+  background: var(--bg-tertiary);
+  flex-shrink: 0;
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+
+.form-card:hover .form-card__actions {
+  opacity: 1;
+}
+
+/* ---- Tag / badge on card ---- */
+
+.form-card__badge {
+  position: absolute;
+  top: var(--space-2);
+  right: var(--space-2);
+  display: inline-flex;
+  align-items: center;
+  height: 18px;
+  padding: 0 var(--space-2);
+  border-radius: var(--radius-full);
+  font-size: 10px;
+  font-weight: var(--weight-semibold);
+  background: var(--accent-subtle);
+  color: var(--accent-color);
+}
+
+/* ---- List view card ---- */
+
+.form-card--list {
+  flex-direction: row;
+  align-items: center;
+  padding: var(--space-3) var(--space-4);
+  gap: var(--space-3);
+  border-radius: var(--radius-md);
+  min-height: 56px;
+}
+
+.form-card--list:hover {
+  transform: none;
+  background-color: var(--bg-hover);
+}
+
+.form-card--list .form-card__preview {
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  border-radius: var(--radius-md);
+  border: none;
+  flex-shrink: 0;
+}
+
+.form-card--list .form-card__content {
+  padding: 0;
+  flex: 1;
+  min-width: 0;
+}
+
+.form-card--list .form-card__actions {
+  padding: 0;
+  background: none;
+  border: none;
+  opacity: 0;
+  flex-shrink: 0;
+}
+
+.form-card--list:hover .form-card__actions {
+  opacity: 1;
+}
+
+/* ---- Sorting / filter bar ---- */
+
+.explorer-filter-bar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-5);
+  border-bottom: 1px solid var(--border-subtle);
+  flex-shrink: 0;
+  overflow-x: auto;
+}
+
+.explorer-filter-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  height: 26px;
+  padding: 0 var(--space-3);
+  border-radius: var(--radius-full);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
+  color: var(--text-secondary);
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  cursor: pointer;
+  white-space: nowrap;
+  transition:
+    background var(--transition),
+    color var(--transition),
+    border-color var(--transition);
+}
+
+.explorer-filter-chip:hover {
+  background: var(--bg-hover);
+  border-color: var(--border-strong);
+  color: var(--text-primary);
+}
+
+.explorer-filter-chip--active {
+  background: var(--accent-subtle);
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+}
