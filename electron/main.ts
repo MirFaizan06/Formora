@@ -45,6 +45,7 @@ function createWindow() {
   }
 
   mainWindow.once('ready-to-show', () => {
+    mainWindow?.maximize()
     mainWindow?.show()
     if (isDev) mainWindow?.webContents.openDevTools({ mode: 'detach' })
   })
